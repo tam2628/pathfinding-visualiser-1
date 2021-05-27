@@ -7,12 +7,10 @@ const dijkstra = (grid: Grid): GridNode[] => {
     END_COL = grid.end.second;
 
   let _grid = grid.grid;
-
-  let visitedNodesInOrder = [];
+  let visitedNodesInOrder: GridNode[] = [];
   let nodes = _grid.reduce((a, b) => [...a, ...b], []);
 
   _grid[START_ROW][START_COL].distance = 0;
-
   while (nodes.length) {
     nodes = nodes.sort((a, b) => a.distance - b.distance);
     const node = nodes.shift() as GridNode;
@@ -50,12 +48,12 @@ function getNeighbors(
   const neighbors: GridNode[] = [];
 
   try {
-    if (node.row - 1 >= 0) neighbors.push(nodeGrid[node.row - 1][node.col]);
-    if (node.row + 1 < rows) neighbors.push(nodeGrid[node.row + 1][node.col]);
-    if (node.col - 1 >= 0) neighbors.push(nodeGrid[node.row][node.col - 1]);
-    if (node.col + 1 < cols) neighbors.push(nodeGrid[node.row][node.col + 1]);
+    if (node.col - 1 >= 0) neighbors.push(nodeGrid[node.row][node.col - 1]); //left
+    if (node.row + 1 < rows) neighbors.push(nodeGrid[node.row + 1][node.col]); //down
+    if (node.col + 1 < cols) neighbors.push(nodeGrid[node.row][node.col + 1]); // right
+    if (node.row - 1 >= 0) neighbors.push(nodeGrid[node.row - 1][node.col]); //up
   } catch {
-    console.log(node);
+    throw new Error("Updating neighbors failed");
   }
 
   return neighbors.filter((n) => n.isVisited === false);

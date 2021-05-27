@@ -35,7 +35,7 @@ const GridNodeFactory = (
   };
 
   const markPath = () => {
-    if (isStart || isEnd) return;
+    if (isStart) return;
     div.classList.add("path");
   };
 

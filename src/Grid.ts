@@ -5,7 +5,6 @@ type Grid = {
   end: Pair;
   grid: GridNode[][];
   getGrid: () => HTMLElement;
-  // update: () => void
 };
 
 type Pair = {
@@ -25,7 +24,6 @@ const GridFactory = (
     for (let j = 0; j < cols; ++j) {
       const isStart = start.first === i && start.second === j;
       const isEnd = end.first === i && end.second === j;
-
       temp.push(GridNodeFactory(i, j, isStart, isEnd));
     }
     grid.push(temp);

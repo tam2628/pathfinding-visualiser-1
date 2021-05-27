@@ -5,15 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Pathfinding Visualizer</title>
     <link rel="stylesheet" href="index.css" />
+    <link rel="stylesheet" href="normalize.css" />
   </head>
   <body>
     <div class="nav">
       <select id="algos"></select>
       <button id="visualise_btn">Visualise</button>
+      <button id="reset_btn">Reset Grid</button>
     </div>
-    <div id="root"></div>
+    <div id="root_container">
+      <div id="root"></div>
+    </div>
   </body>
   <script src="dist/algos/dijkstras.js"></script>
+  <script src="dist/algos/dfs.js"></script>
   <script src="/dist/Grid.js"></script>
   <script src="/dist/Node.js"></script>
   <script src="/dist/index.js"></script>

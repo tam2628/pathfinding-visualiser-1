@@ -8,10 +8,18 @@ body,
 html {
   margin: 0;
   padding: 0;
+  height: 100%;
 }
 
 body {
   background-color: rgb(53, 51, 51);
+}
+
+#root_container {
+  height: 100% !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .node {
