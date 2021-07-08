@@ -3,15 +3,32 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Pathfinding Visualizer</title>
+    <title>🪐 Pathfinding Visualizer</title>
     <link rel="stylesheet" href="index.css" />
     <link rel="stylesheet" href="normalize.css" />
   </head>
   <body>
     <div class="nav">
+      <h3>🪐 Pathfinding Visualizer</h3>
       <select id="algos"></select>
       <button id="visualise_btn">Visualise</button>
       <button id="reset_btn">Reset Grid</button>
+    </div>
+    <div class="controls_and_legends" style="padding: 20px 30px 0 30px">
+      <div
+        id="wall_legend"
+        style="color: white; display: flex; align-items: center"
+      >
+        <div
+          style="
+            display: inline-block;
+            height: 20px;
+            width: 20px;
+            background-color: white;
+          "
+        ></div>
+        <span style="margin-left: 10px; font-weight: bold">Wall</span>
+      </div>
     </div>
     <div id="root_container">
       <div id="root"></div>

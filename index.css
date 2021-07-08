@@ -2,6 +2,7 @@
   box-sizing: border-box;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 body,
@@ -15,9 +16,39 @@ body {
   background-color: rgb(53, 51, 51);
 }
 
+.grid {
+  user-select: none; /* supported by Chrome and Opera */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+}
+
+.nav {
+  padding: 10px;
+  display: flex;
+  align-content: center;
+  background-color: blueviolet;
+}
+
+.nav h3 {
+  color: #dfe4e7;
+}
+
+.nav h3,
+.nav select,
+.nav button {
+  margin: 0px 10px;
+}
+
+body {
+  overflow: hidden;
+}
+
 #root_container {
   height: 100% !important;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
@@ -60,6 +91,10 @@ body {
   animation-name: visitedAnimation;
   animation-duration: 0.7s;
   transition: all 0.2s ease-in-out;
+}
+
+.wall {
+  background-color: whitesmoke;
 }
 
 /* rgb(255, 254, 106) */

@@ -11,9 +11,12 @@ const dijkstra = (grid: Grid): GridNode[] => {
   let nodes = _grid.reduce((a, b) => [...a, ...b], []);
 
   _grid[START_ROW][START_COL].distance = 0;
-  while (nodes.length) {
+  while (!!nodes.length) {
     nodes = nodes.sort((a, b) => a.distance - b.distance);
     const node = nodes.shift() as GridNode;
+    if (node.isWall()) continue;
+    if (node.distance === Infinity) return visitedNodesInOrder;
+
     node.isVisited = true;
     visitedNodesInOrder.push(node);
 

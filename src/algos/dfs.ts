@@ -13,6 +13,8 @@ const dfs = (grid: Grid): GridNode[] => {
 
   while (stack.length !== 0) {
     const node = stack.pop() as GridNode;
+    if (node.isWall()) continue;
+
     node.isVisited = true;
     visitedNodesInOrder.push(node);
 

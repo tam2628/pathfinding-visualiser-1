@@ -31,7 +31,7 @@ const GridFactory = (
 
   const getGrid = (): HTMLElement => {
     const containerDiv = document.createElement("div");
-
+    containerDiv.classList.add("grid");
     for (let i = 0; i < rows; ++i) {
       const rowDivsContainer = document.createElement("div");
       rowDivsContainer.classList.add("row");
@@ -42,6 +42,18 @@ const GridFactory = (
       }
       containerDiv.appendChild(rowDivsContainer);
     }
+
+    containerDiv.addEventListener("mousedown", () => {
+      const state = mouseDownEventManager.getState();
+      const newState = { ...state, mouseDown: true };
+      mouseDownEventManager.emit(newState);
+    });
+
+    containerDiv.addEventListener("mouseup", () => {
+      const state = mouseDownEventManager.getState();
+      const newState = { ...state, mouseDown: false };
+      mouseDownEventManager.emit(newState);
+    });
 
     return containerDiv;
   };
