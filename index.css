@@ -41,12 +41,9 @@ body {
   margin: 0px 10px;
 }
 
-body {
-  overflow: hidden;
-}
-
 #root_container {
-  height: 100% !important;
+  margin-top: 50px;
+  max-height: 100% !important;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -58,7 +55,6 @@ body {
   width: 25px;
   border-top: 0.25px solid rgb(100, 100, 100);
   border-left: 0.25px solid rgb(100, 100, 100);
-  /* display: inline-block; */
 }
 
 .row {

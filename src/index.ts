@@ -34,7 +34,7 @@ function StateEventManager() {
 const mouseDownEventManager = StateEventManager();
 
 window.onload = () => {
-  const ALGOS = ["dijkstras", "bfs", "dfs"];
+  const ALGOS = ["dijkstras", "dfs"];
   let SELECTED_ALGO = ALGOS[0];
   const SPEED = 15,
     ROWS = 30,
